@@ -1,0 +1,33 @@
+<div>
+<table>
+  <tr>
+    <td><h3>Details for : {{emps.name}}</h3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Employee Name: </td>
+    <td>{{emps.name}}</td>
+  </tr>
+  <tr>
+    <td>Employee Salary: </td>
+    <td>{{emps.salary}}</td>
+  </tr>
+  <tr>
+    <td>Employee Email: </td>
+    <td>{{emps.email}}</td>
+  </tr>
+  <tr>
+    <td>Employee Number: </td>
+    <td>{{emps.number}}</td>
+  </tr>
+    <tr>
+    <td>Employee Address: </td>
+    <td>{{emps.address}}</td>
+  </tr>
+</table>
+<br><br>
+<div>
+  <a ng-controller="EmpEditController" class="btn btn-primary" ng-click="editUser(emps)">Edit</a>
+  <a class="btn btn-primary" ng-click="cancel()">Back</a>
+</div>
+</div>

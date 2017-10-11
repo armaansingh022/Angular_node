@@ -1,0 +1,40 @@
+<center>
+    <h2>Welcome {{welcome}}</h2>
+    <a ng-click="newEmp()" ng-hide="addemp" class="btn-primary btn-lg nodecoration">Add New Employee</a>
+    <a ng-click="directivecall()" ng-hide="diremp" class="btn-primary btn-lg nodecoration">Directive</a>
+    <a ng-click="cancel()" ng-hide="backto" class="btn-primary btn-lg nodecoration">Back</a>
+    <h3>All Employee</h3>
+    <div ng-hide="searchit"><i class="fa fa-search" aria-hidden="true" style="float: right; font-size: 20px;"></i>
+        <input type="text" ng-model="search" placeholder="Search here" style="float: right" />
+    </div>
+
+        <my-table ng-if="direc" field="name number">
+        </my-table>
+    <br>
+    <br>
+    <div ng-show="tabledi2">
+        <table width="100%" border="2px" style="padding: 5px">
+            <thead align="center" border="2px">
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Salary</td>
+                    <td>Number</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr ng-repeat="emp in emps | filter : search">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.number}}</td>
+                    <td align="center">
+                        <a ng-controller="EmpViewController" class="btn btn-primary" ng-click="viewUser(emp)">View</a>
+                        <a ng-controller="EmpEditController" class="btn btn-danger" ng-click="deleteUser({emp_id: emp.emp_id})">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</center>
